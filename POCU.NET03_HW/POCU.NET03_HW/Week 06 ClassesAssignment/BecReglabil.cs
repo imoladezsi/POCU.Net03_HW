@@ -16,6 +16,7 @@ namespace POCU.NET03_HW.Week_06_ClassesAssignment
         public ushort PutereaMaxima { get { return _putereaMaxima; } }
         public bool Aprins { get { return _putereaCurenta > 0; } }
         public void Stinge() { _putereaCurenta = 0; }
+        public void Aprinde() { _putereaCurenta = _putereaMaxima; }
 
         public void MaresteLumina(ushort maresteCu) {
             ushort rezultat = (ushort) (_putereaCurenta + maresteCu);

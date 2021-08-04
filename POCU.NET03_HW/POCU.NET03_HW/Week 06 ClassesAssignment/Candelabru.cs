@@ -9,9 +9,8 @@ namespace POCU.NET03_HW.Week_06_ClassesAssignment
         private BecReglabil[] becuri;
 
         public Candelabru(params ushort[] puteriMaxime)
-        {
-            if (puteriMaxime.Length > becuri.Length)
-                becuri = new BecReglabil[puteriMaxime.Length];
+        { 
+            becuri = new BecReglabil[puteriMaxime.Length];
             for (int i = 0; i < puteriMaxime.Length; i++)
             {
                 becuri[i] = new BecReglabil(puteriMaxime[i], 0);
@@ -66,6 +65,14 @@ namespace POCU.NET03_HW.Week_06_ClassesAssignment
             }
         }
 
+        public void Aprinde()
+        {
+            foreach (BecReglabil bec in becuri)
+            {
+                bec.Aprinde();
+            }
+        }
+
         public void MaresteLumina(ushort maresteCu)
         {
             foreach (BecReglabil bec in becuri)
@@ -94,8 +101,19 @@ namespace POCU.NET03_HW.Week_06_ClassesAssignment
             foreach (Candelabru cl in candelabre)
             {
                 Console.WriteLine(cl.Aprins ? $"{cl} este aprins" : $"{cl} nu este aprins");
-                Console.WriteLine($"Puterea maxima a {cl} este ${cl.PutereMaxima}");
-                Console.WriteLine($"Puterea curenta a {cl} este ${cl.PutereCurenta}");
+                Console.WriteLine($"Puterea maxima a {cl} este {cl.PutereMaxima}");
+                Console.WriteLine($"Puterea curenta a {cl} este {cl.PutereCurenta}");
+                cl.Aprinde();
+                Console.WriteLine("Dupa aprindere: " + (cl.Aprins ? $"{cl} este aprins" : $"{cl} nu este aprins"));
+                Console.WriteLine($"Dupa aprindere: Puterea curenta a {cl} este {cl.PutereCurenta}");
+                cl.Stinge();
+                Console.WriteLine("Dupa stringere: " + (cl.Aprins ? $"{cl} este aprins" : $"{cl} nu este aprins"));
+                cl.MaresteLumina(80);
+                Console.WriteLine("Dupa marire: " + (cl.Aprins ? $"{cl} este aprins" : $"{cl} nu este aprins"));
+                Console.WriteLine($"Dupa marire: Puterea curenta a {cl} este {cl.PutereCurenta}");
+                cl.ReduceLumina(50);
+                Console.WriteLine("Dupa reducere: " + (cl.Aprins ? $"{cl} este aprins" : $"{cl} nu este aprins"));
+                Console.WriteLine($"Dupa reducere: Puterea curenta a {cl} este {cl.PutereCurenta}");
             }
         }
 

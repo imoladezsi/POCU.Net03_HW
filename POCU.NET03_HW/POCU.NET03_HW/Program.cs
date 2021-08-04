@@ -1,5 +1,5 @@
 ﻿using System;
-
+using POCU.NET03_HW.Week_06_ClassesAssignment;
 namespace POCU.NET03_HW
 {
     class Program
@@ -15,6 +15,8 @@ namespace POCU.NET03_HW
             Console.WriteLine();
             Console.WriteLine("Assignment week 4 - String assignment");
             Week04_StringAssignment.RunExercise();
+            Console.WriteLine("Assignment week 6 - Classes assignment");
+            Candelabru.RunExercise();
         }
     }
 }
